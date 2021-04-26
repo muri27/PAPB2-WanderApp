@@ -56,9 +56,9 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         try{
             boolean success=mMap.setMapStyle(
                     MapStyleOptions.loadRawResourceStyle(this,
-                            R.row.map_style.json));
+                            R.raw.map_style));
             if(!success){
-                Log.e("TAG", "Style Parsing Failed")
+                Log.e("TAG", "Style Parsing Failed");
             }
         }catch(Resources.NotFoundException e){
             Log.e("TAG", "Can't Find Style, Error : ", e);
@@ -74,7 +74,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
         LatLng postOverlay = new LatLng(-7.797, 110.373);
         GroundOverlayOptions overlay=new GroundOverlayOptions()
-                .image((BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher)))
+                .image((BitmapDescriptorFactory.fromResource(R.drawable.android)))
                 .position(postOverlay, 100);
         mMap.addGroundOverlay(overlay);
     }
